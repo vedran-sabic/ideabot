@@ -1,13 +1,20 @@
-// vidimo da se asinkrona funkcija logira posljednja na konzolu
+/*
+Challenge:
 
-console.log("The first console log");
+1. Fetch a random image from the Dog API again 
+(https://dog.ceo/api/breeds/image/random)
+
+2. Access the DOM and insert the URL you got from the
+API as an image `src` property (probably easiest if 
+you create the image completely here in the JS and add 
+it as the innerHTML of another element on the DOM)
+*/
 
 fetch("https://dog.ceo/api/breeds/image/random")
   .then((response) => response.json())
-  .then((data) => console.log(data));
-
-console.log("The second console log");
-
-for (let i = 0; i < 10; i++) {
-  console.log("I'm inside the for loop");
-}
+  .then((data) => {
+    console.log(data);
+    document.getElementById("image-container").innerHTML = `
+            <img src="${data.message}" />
+        `;
+  });
