@@ -1,20 +1,15 @@
-/*
-Challenge:
+/**
+Challenge: 
 
-1. Fetch a random image from the Dog API again 
-(https://dog.ceo/api/breeds/image/random)
+1. Fetch a random activity from the Bored API
+url: https://www.boredapi.com/api/activity
 
-2. Access the DOM and insert the URL you got from the
-API as an image `src` property (probably easiest if 
-you create the image completely here in the JS and add 
-it as the innerHTML of another element on the DOM)
+2. Display the text of the activity in the browser
 */
 
-fetch("https://dog.ceo/api/breeds/image/random")
+fetch("https://www.boredapi.com/api/activity")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    document.getElementById("image-container").innerHTML = `
-            <img src="${data.message}" />
-        `;
+    document.getElementById("activity-name").textContent = data.activity;
   });
