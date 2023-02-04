@@ -1,12 +1,13 @@
-/*
-Challenge:
+// vidimo da se asinkrona funkcija logira posljednja na konzolu
 
-1. Google for "how to use fetch with json"
-2. Should find a top result from MDN
-3. MANUALLY copy over the fetch, but using the URL below 👇
-    https://dog.ceo/api/breeds/image/random
-*/
+console.log("The first console log");
 
 fetch("https://dog.ceo/api/breeds/image/random")
   .then((response) => response.json())
   .then((data) => console.log(data));
+
+console.log("The second console log");
+
+for (let i = 0; i < 10; i++) {
+  console.log("I'm inside the for loop");
+}
